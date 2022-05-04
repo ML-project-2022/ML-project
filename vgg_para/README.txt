@@ -1,1 +1,1 @@
-Please put vgg-19 in this folder.
+Pretrained model of vgg-19

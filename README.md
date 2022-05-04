@@ -1,8 +1,13 @@
-# Style-transfer-with-neural-algorithm
+# 卷积神经网络与风格迁移
 
-The above code is a simple implementation with TensorFlow of the paper， this paper [Image Style Transfer Using Convolutional Neural Networks](http://openaccess.thecvf.com/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf), which is published in CVPR2016. The idea of one image's style transfer to another image is really cool, and it is very easy to implement with TensorFlow. Meanwhile, training time for one image just cost a few minutes.
+尽管区分图像的语义和风格在传统图像处理方法中是困难的, 但我们可以比较容易地用卷积神经网络来分离图片的纹理和内容. 考虑卷积核的大小, 当卷积核比较大的时候, 我们提取的是整个图像粗粒度的信息(比如风格), 而当卷积核比较小的时候, 则会得到图片中像素级别的信息. 
+因此风格在直观上来说比较像是用大卷积核提取特征后的结果, 而内容在直观上来说是小卷积核提取特征后的结果. 
 
-How to use the code
+在具体的优化中, 我们用特征图的欧式距离来表征内容损失(这是常见的处理方法). 用特征图gram矩阵的欧式距离来表征风格损失(度量的是主要特征间的差异). 在内容损失和风格损失相加时很明显有一个权重超参数. 这将决定风格化的明显程度
+
+ 
+
+事实上
 ---------------------
 
 Firstly, you need these package of python: tensorflow, numpy, scipy, pillow
